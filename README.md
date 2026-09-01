@@ -16,6 +16,8 @@ bất kỳ máy chủ nào.
 
 ## Tải và cài
 
+**Windows**
+
 | File | Dùng khi |
 |---|---|
 | **`setup.exe`** | Cài bình thường. Bộ cài đầy đủ, có cả phần gỡ cài đặt. |
@@ -25,9 +27,28 @@ bất kỳ máy chủ nào.
 Yêu cầu: Windows 10 hoặc mới hơn (64 bit). Bộ cài tự kèm .NET Runtime, không phải
 cài thêm gì.
 
-Bộ cài được **ký số** bằng chứng thư OV code signing. Sau khi tải, bấm chuột phải
-vào `setup.exe` → **Properties → Digital Signatures** để đối chiếu nhà phát hành
-trước khi chạy.
+**macOS**
+
+| File | Dùng khi |
+|---|---|
+| **`PDFSigner-mac-osx-arm64.zip`** | Máy Apple Silicon (M1 trở lên). |
+| **`PDFSigner-mac-osx-x64.zip`** | Máy Mac chạy chip Intel. |
+
+Giải nén rồi kéo **PDF Signer** vào thư mục Applications. Yêu cầu macOS 11 trở lên.
+Không rõ máy mình loại nào thì mở Terminal gõ `uname -m`: ra `arm64` là Apple
+Silicon, ra `x86_64` là Intel.
+
+Bản macOS **ký nhờ token cắm ở một máy Windows** — trên macOS, USB token của các
+nhà cung cấp trong nước chưa dùng trực tiếp được. Xem mục "Ký từ xa" bên dưới.
+
+**Chữ ký của bộ cài**
+
+Bản Windows ký bằng chứng thư **OV code signing**: bấm chuột phải vào `setup.exe`
+→ **Properties → Digital Signatures** để đối chiếu nhà phát hành trước khi chạy.
+
+Bản macOS ký bằng **Developer ID** của Apple và đã qua **công chứng
+(notarization)**, nên mở như mọi phần mềm bình thường — không phải bấm chuột phải
+→ Open, cũng không phải vào System Settings gỡ chặn.
 
 ## Cập nhật
 
