@@ -13,6 +13,8 @@ bất kỳ máy chủ nào.
   </a>
 </p>
 
+![Ký tài liệu](anh/ky-tai-lieu.jpg)
+
 ---
 
 ## Tải và cài
@@ -97,11 +99,37 @@ một chuỗi băm vài chục byte. Khoá bí mật không rời khỏi token. 
 có ghim vân tay chứng thư, và **mỗi lượt ký đều phải người giữ token bấm duyệt**,
 nhìn rõ ai đang xin ký file gì.
 
+![Ký từ xa](anh/ky-tu-xa.jpg)
+
+*Màn hình trên máy cắm token. Người ở xa chỉ cần hai con số này. (Mã trong ảnh đã
+được che.)*
+
 **Khác**
 
 - Giao diện tiếng Việt / tiếng Anh, nền sáng / nền tối.
 - Chạy qua proxy của cơ quan.
 - Đọc được file Office (Word, Excel) — chuyển sang PDF rồi ký.
+
+## Vài màn hình khác
+
+**Xác thực chữ ký** — mở một file đã ký để xem ai ký, ký lúc nào, nội dung có bị
+sửa sau khi ký không.
+
+![Xác thực chữ ký](anh/xac-thuc-chu-ky.jpg)
+
+**Mẫu chữ ký** — dựng sẵn cách hiển thị chỗ ký: hình dấu, dòng thông tin nào hiện
+ra, cỡ chữ, màu chữ. Ký lần sau chỉ việc chọn mẫu.
+
+![Mẫu chữ ký](anh/mau-chu-ky.jpg)
+
+**Ký bộ cài Windows** — ký Authenticode cho file `.exe` / `.msi` / `.dll` qua
+Microsoft SignTool, kèm dấu thời gian.
+
+![Ký bộ cài Windows](anh/ky-bo-cai-windows.jpg)
+
+**Bản macOS** — cùng bộ tính năng ký PDF, ký nhờ token cắm ở máy Windows.
+
+![Bản macOS](anh/ban-mac.jpg)
 
 ## Câu hỏi hay gặp
 
