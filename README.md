@@ -1,6 +1,7 @@
 # PDF Signer
 
-Phần mềm ký số tài liệu PDF cho Windows, dùng chứng thư số trong USB token.
+Phần mềm ký số tài liệu PDF cho **Windows và macOS**, dùng chứng thư số trong
+USB token.
 
 **Tài liệu không rời khỏi máy.** Việc ký diễn ra ngay trên máy người dùng, khoá bí
 mật không rời khỏi token, mất mạng vẫn ký được. Phần mềm không gửi tài liệu lên
@@ -78,12 +79,23 @@ hai là bỏ gói.
 
 - Ký Authenticode qua Microsoft SignTool, kèm dấu thời gian.
 
-**Ký từ xa**
+**Ký từ xa — chỉ cần một dãy số**
 
-- Máy có token bật chế độ cho máy khác ký qua. Máy ở xa (kể cả macOS) ghép nối
-  bằng mã 6 số, rồi ký như ký tại chỗ.
-- Đường truyền TLS có ghim vân tay chứng thư; **mỗi lượt ký đều phải người giữ
-  token bấm duyệt**. Khoá bí mật không bao giờ rời khỏi token.
+Cả công ty dùng chung một USB token, không phải chuyền tay nhau.
+
+- Máy cắm token bật *"Cho máy khác ký qua máy này"*, màn hình hiện một **ID chín
+  chữ số** và một **mã**. Máy ở xa (Windows hay macOS) gõ hai số đó là ký được —
+  giống cách TeamViewer nối máy.
+- **Không phải mở cổng, không phải NAT, không cần IP tĩnh.** Máy cắm token tự gọi
+  ra ngoài, nên nó nằm sau router nào cũng được.
+- ID **gắn với máy**: cài lại phần mềm hay đổi tài khoản Windows, ID vẫn y nguyên.
+  Mã thì mỗi lần bật sinh một mã mới, hoặc tự đặt mã cố định.
+- Hai máy ở cùng mạng nội bộ thì nối thẳng bằng địa chỉ IP, không cần Internet.
+
+**Vẫn an toàn:** tài liệu KHÔNG rời khỏi máy người soạn — thứ chạy qua mạng chỉ là
+một chuỗi băm vài chục byte. Khoá bí mật không rời khỏi token. Đường truyền là TLS
+có ghim vân tay chứng thư, và **mỗi lượt ký đều phải người giữ token bấm duyệt**,
+nhìn rõ ai đang xin ký file gì.
 
 **Khác**
 
@@ -106,8 +118,9 @@ thể không phải bản gốc.
 **Máy tôi không có token thì ký được không?** Ký qua máy khác có token — xem mục
 "Ký từ xa".
 
-**Dùng trên macOS được không?** Bản macOS ký qua máy Windows có cắm token (trên
-macOS, USB token của các nhà cung cấp trong nước chưa dùng trực tiếp được).
+**Dùng trên macOS được không?** Được, có bản riêng cho Apple Silicon và Intel.
+Máy Mac ký qua một máy Windows có cắm token (trên macOS, USB token của các nhà
+cung cấp trong nước chưa dùng trực tiếp được) — gõ ID và mã là xong.
 
 ## Liên hệ
 
